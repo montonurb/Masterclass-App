@@ -1,6 +1,6 @@
+// ignore_for_file: must_be_immutable
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
 import '../theme/app_theme.dart';
 
 class CustomCard extends StatelessWidget {
