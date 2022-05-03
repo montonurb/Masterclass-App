@@ -1,7 +1,8 @@
 // ignore_for_file: must_be_immutable
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:masterclass_app/theme/app_theme.dart';
+import 'package:masterclass_app/widgets/custom_card.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -15,170 +16,129 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
-    return Material(
-      color: AppTheme.colors.scaffoldBackground,
-      child: SingleChildScrollView(
-        child: Padding(
-          padding:
-              const EdgeInsets.only(top: 42, left: 15, right: 15, bottom: 20),
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: AppTheme.colors.scaffoldBackground,
+        body: SingleChildScrollView(
+          child: Padding(
+            padding:
+                const EdgeInsets.only(top: 42, left: 15, right: 15, bottom: 20),
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Image.asset("/img/home/logo.png"),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 8.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Atividades",
-                              style: AppTheme.textStyle.healine1,
+                      Row(
+                        children: [
+                          Image.asset("assets/img/home/logo.png"),
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              left: 8.0,
                             ),
-                            Text(
-                              "Flutterando Masterclass",
-                              style: AppTheme.textStyle.description,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Atividades",
+                                  style: AppTheme.textStyle.healine1,
+                                ),
+                                Text(
+                                  "Flutterando Masterclass",
+                                  style: AppTheme.textStyle.description,
+                                ),
+                              ],
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
+                      ),
+                      SvgPicture.asset(
+                        "assets/img/home/awesome-moon.svg",
+                        color: AppTheme.colors.textHighlight,
                       ),
                     ],
                   ),
-                  SvgPicture.asset(
-                    "/img/home/awesome-moon.svg",
-                    color: AppTheme.colors.textHighlight,
-                  ),
-                ],
-              ),
-              const SizedBox(height: 16),
-              CustomCard(
-                height: height,
-                width: width,
-                imageIcon: "/img/home/awesome-running.svg",
-                title: "Animações",
-                exercise: 4,
-                text:
-                    'Estudos sobre animações implícitas e controladas, contendo 4 exercícios e 2 estudos.',
-                linkGitHub: '',
-              ),
-              const SizedBox(height: 16),
-              CustomCard(
-                height: height,
-                width: width,
-                imageIcon: "/img/home/awesome-running.svg",
-                title: 'Leitura de Mockup',
-                exercise: 2,
-                text:
-                    'Estudos sobre animações implícitas e controladas, contendo 4 exercícios e 2 estudos.',
-                linkGitHub: '',
-              ),
-            ],
+                ),
+                const SizedBox(height: 16),
+                CustomCard(
+                  height: height,
+                  width: width,
+                  imageIcon: "assets/img/home/awesome-running.svg",
+                  title: "Animações",
+                  exercise: 4,
+                  text:
+                      'Estudos sobre animações implícitas e controladas, contendo 4 exercícios e 2 estudos.',
+                  linkGitHub: '',
+                ),
+                const SizedBox(height: 16),
+                CustomCard(
+                  height: height,
+                  width: width,
+                  imageIcon: "assets/img/home/awesome-glasses.svg",
+                  title: 'Leitura de Mockup',
+                  exercise: 2,
+                  text:
+                      'Aplicação da técnica de leitura de mockup, contendo 2 exercícios.',
+                  linkGitHub: '',
+                ),
+                const SizedBox(height: 16),
+                CustomCard(
+                  height: height,
+                  width: width,
+                  imageIcon: "assets/img/home/material-toys.svg",
+                  title: 'Playground',
+                  exercise: 2,
+                  text: 'Ambiente destinado a testes e estudos em geral.',
+                  linkGitHub: '',
+                ),
+              ],
+            ),
           ),
         ),
-      ),
-    );
-  }
-}
-
-class CustomCard extends StatelessWidget {
-  double height = 0.0;
-  double width = 0.0;
-  String imageIcon;
-  String title = "";
-  int exercise = 0;
-  String text = "";
-  String linkGitHub = "";
-
-  CustomCard({
-    Key? key,
-    required this.height,
-    required this.width,
-    required this.imageIcon,
-    required this.title,
-    required this.exercise,
-    required this.text,
-    required this.linkGitHub,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: height * 0.25,
-      width: width,
-      decoration: BoxDecoration(
-        color: AppTheme.colors.cardBackground,
-        borderRadius: BorderRadius.circular(15),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  children: [
-                    Container(
-                      height: 43,
-                      width: 43,
-                      decoration: BoxDecoration(
-                        color: AppTheme.colors.primary,
-                        borderRadius: BorderRadius.circular(100),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 4),
-                        child: SvgPicture.asset(imageIcon),
-                      ),
-                    ),
-                    const SizedBox(width: 13),
-                    Text(title, style: AppTheme.textStyle.healine2),
-                  ],
+        bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: AppTheme.colors.scaffoldBackground,
+          unselectedItemColor: AppTheme.colors.textHighlight,
+          selectedFontSize: 12,
+          selectedItemColor: AppTheme.colors.textHighlight,
+          iconSize: 30,
+          selectedIconTheme:
+              IconThemeData(color: AppTheme.colors.cardBackground),
+          items: <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              backgroundColor: AppTheme.colors.cardBackground,
+              icon: Container(
+                decoration: BoxDecoration(
+                  color: AppTheme.colors.cardBackground,
+                  borderRadius: BorderRadius.circular(16),
                 ),
-                Row(
-                  children: [
-                    Text("Exercicios:", style: AppTheme.textStyle.padrao),
-                    const SizedBox(width: 13),
-                    Text("$exercise", style: AppTheme.textStyle.description),
-                  ],
+                height: 40,
+                width: 50,
+                child: SvgPicture.asset(
+                  "assets/img/home/feather-target.svg",
+                  fit: BoxFit.scaleDown,
                 ),
-              ],
+              ),
+              label: "Atividades",
             ),
-            Text(
-              text,
-              style: AppTheme.textStyle.bodyText,
+            BottomNavigationBarItem(
+              icon: SizedBox(
+                height: 40,
+                width: 24,
+                child: SvgPicture.asset(
+                  "assets/img/home/awesome-github.svg",
+                ),
+              ),
+              label: "Repositórios",
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  children: [
-                    SvgPicture.asset("/img/home/awesome-github.svg"),
-                    const SizedBox(width: 5),
-                    Text("Acessar código fonte.",
-                        style: AppTheme.textStyle.padrao),
-                  ],
+            const BottomNavigationBarItem(
+              icon: SizedBox(
+                height: 40,
+                child: Icon(
+                  Icons.person,
                 ),
-                GestureDetector(
-                  onTap: () {},
-                  child: Container(
-                    height: 35,
-                    width: 120,
-                    decoration: BoxDecoration(
-                      color: AppTheme.colors.primary,
-                      borderRadius: BorderRadius.circular(50),
-                    ),
-                    child: Center(
-                        child: Text(
-                      "Ver mais",
-                      style: AppTheme.textStyle.description,
-                    )),
-                  ),
-                ),
-              ],
+              ),
+              label: "Sobre o dev",
             )
           ],
         ),

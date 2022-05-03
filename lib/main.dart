@@ -18,7 +18,7 @@ class _MasterClassAppState extends State<MasterClassApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const HomeScreen(),
+      home: const SplashScreen(),
       routes: <String, WidgetBuilder>{
         "/splash-screen": (context) => const SplashScreen(),
         "/home-screen": (context) => const HomeScreen(),
