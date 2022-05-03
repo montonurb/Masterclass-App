@@ -7,6 +7,8 @@ abstract class AppTextStyle {
   TextStyle get healine1;
   TextStyle get healine2;
   TextStyle get description;
+  TextStyle get poppinsMedium12;
+  TextStyle get poppinsMedium14;
   TextStyle get bodyText;
 }
 
@@ -34,6 +36,20 @@ class AppTextStyleDefault implements AppTextStyle {
   @override
   TextStyle get description => GoogleFonts.poppins(
         fontSize: 12,
+        color: AppTheme.colors.textHighlight,
+        fontWeight: FontWeight.w500,
+      );
+
+  @override
+  TextStyle get poppinsMedium12 => GoogleFonts.poppins(
+        fontSize: 12,
+        color: AppTheme.colors.bodytext,
+        fontWeight: FontWeight.w500,
+      );
+
+  @override
+  TextStyle get poppinsMedium14 => GoogleFonts.poppins(
+        fontSize: 14,
         color: AppTheme.colors.textHighlight,
         fontWeight: FontWeight.w500,
       );

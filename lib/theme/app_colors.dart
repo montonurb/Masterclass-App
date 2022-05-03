@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 abstract class AppColors {
   Color get primary;
-  Color get branco;
   Color get scaffoldBackground;
   Color get cardBackground;
   Color get bodytext;
@@ -12,9 +11,6 @@ abstract class AppColors {
 class AppColorsDefault implements AppColors {
   @override
   Color get primary => const Color(0xFF055AA3);
-
-  @override
-  Color get branco => const Color(0xFFFFFFFF);
 
   @override
   Color get scaffoldBackground => const Color(0xFF121517);
