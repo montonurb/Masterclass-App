@@ -1,9 +1,9 @@
 // ignore_for_file: must_be_immutable
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:masterclass_app/screen/activities_screen.dart';
-import 'package:masterclass_app/screen/dev_screen.dart';
-import 'package:masterclass_app/screen/repository_screen.dart';
+import 'package:masterclass_app/screen/home_activities_screen.dart';
+import 'package:masterclass_app/screen/home_dev_screen.dart';
+import 'package:masterclass_app/screen/home_repository_screen.dart';
 import 'package:masterclass_app/theme/app_theme.dart';
 
 class HomeScreen extends StatefulWidget {
