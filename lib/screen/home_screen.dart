@@ -20,7 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     final screens = [
-      ActivitiesScreen(height: height, width: width),
+      HomeActivitiesScreen(height: height, width: width),
       RepositoryScreen(height: height, width: width),
       DevScreen(height: height, width: width),
     ];

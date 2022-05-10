@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:masterclass_app/screen/activiy_screen.dart';
 import 'package:masterclass_app/screen/home_screen.dart';
 import 'package:masterclass_app/screen/splash_screen.dart';
 
@@ -19,9 +20,11 @@ class _MasterClassAppState extends State<MasterClassApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: const SplashScreen(),
+      darkTheme: ThemeData.dark(),
       routes: <String, WidgetBuilder>{
         "/splash-screen": (context) => const SplashScreen(),
         "/home-screen": (context) => const HomeScreen(),
+        "/activity-screen": (context) => AcitivityScreen(),
       },
     );
   }

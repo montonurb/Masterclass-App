@@ -86,7 +86,10 @@ class CustomCard extends StatelessWidget {
                   ],
                 ),
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context).pushNamed('/activity-screen',
+                        arguments: [title, exercise]);
+                  },
                   child: Container(
                     height: 35,
                     width: 120,
