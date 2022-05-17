@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:masterclass_app/screen/activiy_screen.dart';
+import 'package:masterclass_app/screen/cpf/cpf_screen.dart';
 import 'package:masterclass_app/screen/home_screen.dart';
 import 'package:masterclass_app/screen/splash_screen.dart';
 
@@ -25,6 +26,7 @@ class _MasterClassAppState extends State<MasterClassApp> {
         "/splash-screen": (context) => const SplashScreen(),
         "/home-screen": (context) => const HomeScreen(),
         "/activity-screen": (context) => AcitivityScreen(),
+        "/cpf-screen": (context) => const CpfScreen(),
       },
     );
   }
