@@ -32,6 +32,7 @@ class _CpfScreenState extends State<CpfScreen> {
                   fontSize: 20,
                   color: AppTheme.colors.textHighlight,
                 ),
+                keyboardType: TextInputType.number,
                 decoration: InputDecoration(
                   enabledBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
