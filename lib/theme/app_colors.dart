@@ -6,6 +6,7 @@ abstract class AppColors {
   Color get cardBackground;
   Color get bodytext;
   Color get textHighlight;
+  Color get check;
 }
 
 class AppColorsDefault implements AppColors {
@@ -23,4 +24,7 @@ class AppColorsDefault implements AppColors {
 
   @override
   Color get bodytext => const Color(0xFF51565A);
+
+  @override
+  Color get check => const Color(0xFF03BB85);
 }

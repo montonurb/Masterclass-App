@@ -23,7 +23,7 @@ class HomeActivitiesScreen extends StatelessWidget {
           width: width,
           child: Column(
             children: [
-              CustomHeader(title: "Atividades"),
+              CustomHeader(title: "Atividades", logo: true),
               const SizedBox(height: 16),
               Expanded(
                 child: ListView.separated(
@@ -44,39 +44,6 @@ class HomeActivitiesScreen extends StatelessWidget {
                   },
                 ),
               ),
-              /*
-              CustomCard(
-                height: height,
-                width: width,
-                imageIcon: "assets/img/home/awesome-running.svg",
-                title: "Animações",
-                exercise: 4,
-                text:
-                    'Estudos sobre animações implícitas e controladas, contendo 4 exercícios e 2 estudos.',
-                linkGitHub: '',
-              ),
-              const SizedBox(height: 16),
-              CustomCard(
-                height: height,
-                width: width,
-                imageIcon: "assets/img/home/awesome-glasses.svg",
-                title: 'Leitura de Mockup',
-                exercise: 2,
-                text:
-                    'Aplicação da técnica de leitura de mockup, contendo 2 exercícios.',
-                linkGitHub: '',
-              ),
-              const SizedBox(height: 16),
-              CustomCard(
-                height: height,
-                width: width,
-                imageIcon: "assets/img/home/material-toys.svg",
-                title: 'Playground',
-                exercise: 2,
-                text: 'Ambiente destinado a testes e estudos em geral.',
-                linkGitHub: '',
-              ),
-              */
             ],
           ),
         ),

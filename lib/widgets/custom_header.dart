@@ -7,7 +7,9 @@ import '../theme/app_theme.dart';
 
 class CustomHeader extends StatelessWidget {
   String title = "";
-  CustomHeader({Key? key, required this.title}) : super(key: key);
+  bool logo = true;
+  CustomHeader({Key? key, required this.title, required this.logo})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +20,18 @@ class CustomHeader extends StatelessWidget {
         children: [
           Row(
             children: [
-              Image.asset("assets/img/home/logo.png"),
+              logo == true
+                  ? Image.asset("assets/img/home/logo.png")
+                  : GestureDetector(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: Icon(
+                        Icons.arrow_back_ios_new,
+                        color: AppTheme.colors.textHighlight,
+                        size: 35,
+                      ),
+                    ),
               Padding(
                 padding: const EdgeInsets.only(
                   left: 8.0,

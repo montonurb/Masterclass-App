@@ -23,10 +23,10 @@ class DevScreen extends StatelessWidget {
         child: SizedBox(
           child: Column(
             children: [
-              CustomHeader(title: "Sobre o dev"),
+              CustomHeader(title: "Sobre o dev", logo: true),
               const SizedBox(height: 16),
               Container(
-                height: height * 0.32,
+                height: height * 0.35,
                 width: width,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(32),

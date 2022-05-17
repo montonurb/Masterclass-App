@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.com.montonurb.masterclass.masterclass_app">
    <application
-        android:label="masterclass_app"
+        android:label="Masterclass"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
