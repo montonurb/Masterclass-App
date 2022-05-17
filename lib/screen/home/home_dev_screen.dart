@@ -2,11 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:masterclass_app/theme/app_theme.dart';
 import 'package:masterclass_app/widgets/custom_header.dart';
 import 'package:masterclass_app/widgets/custom_skill.dart';
 import 'package:masterclass_app/widgets/custom_tech.dart';
-
-import '../theme/app_theme.dart';
 
 class DevScreen extends StatelessWidget {
   double height = 0.0;

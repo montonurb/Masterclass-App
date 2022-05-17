@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:masterclass_app/screen/activiy_screen.dart';
+import 'package:masterclass_app/screen/activity/activiy_screen.dart';
 import 'package:masterclass_app/screen/cpf/cpf_screen.dart';
-import 'package:masterclass_app/screen/home_screen.dart';
-import 'package:masterclass_app/screen/splash_screen.dart';
+import 'package:masterclass_app/screen/home/home_screen.dart';
+import 'package:masterclass_app/screen/splash/splash_screen.dart';
 
 void main(List<String> args) {
   runApp(const MasterClassApp());
