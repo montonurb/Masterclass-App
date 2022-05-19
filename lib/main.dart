@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:masterclass_app/screen/activity/activiy_screen.dart';
-import 'package:masterclass_app/screen/cpf/cpf_screen.dart';
+import 'package:masterclass_app/screen/design_pattern/cpf/cpf_screen.dart';
 import 'package:masterclass_app/screen/home/home_screen.dart';
+import 'package:masterclass_app/screen/mockup/bank/bank_screen.dart';
+import 'package:masterclass_app/screen/mockup/tinder/tinder_screen.dart';
 import 'package:masterclass_app/screen/splash/splash_screen.dart';
 
 void main(List<String> args) {
@@ -26,7 +28,11 @@ class _MasterClassAppState extends State<MasterClassApp> {
         "/splash-screen": (context) => const SplashScreen(),
         "/home-screen": (context) => const HomeScreen(),
         "/activity-screen": (context) => AcitivityScreen(),
-        "/cpf-screen": (context) => const CpfScreen(),
+        "/cpf-design-pattern-screen": (context) => const CpfScreen(),
+        //"/implied-animation-screen": (context) => const CpfScreen(),
+        //"/controlled-animation-screen": (context) => const CpfScreen(),
+        "/bank-mockup-screen": (context) => const BankScreen(),
+        "/tinder-mockup-screen": (context) => const TinderScreen(),
       },
     );
   }
