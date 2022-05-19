@@ -1,7 +1,7 @@
 // ignore_for_file: must_be_immutable, avoid_print, prefer_const_constructors_in_immutables
 
 import 'package:flutter/material.dart';
-import 'package:masterclass_app/models/card.dart';
+import 'package:masterclass_app/models/exercise/card.dart';
 import 'package:masterclass_app/theme/app_theme.dart';
 import 'package:masterclass_app/widgets/custom_header.dart';
 
@@ -14,8 +14,9 @@ class AcitivityScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final args = ModalRoute.of(context)!.settings.arguments;
     List arguments = args as List;
-    String title = arguments[0];
-    int exercizes = arguments[1];
+    int indice = arguments[0];
+    String title = arguments[1];
+    int exercizes = arguments[2];
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
 
@@ -35,8 +36,8 @@ class AcitivityScreen extends StatelessWidget {
                   itemBuilder: (BuildContext context, int index) {
                     return GestureDetector(
                       onTap: () {
-                        print(card[index][5][index]);
-                        Navigator.of(context).pushNamed(card[index][5][index]);
+                        print(card[indice][5][index]);
+                        Navigator.of(context).pushNamed(card[indice][5][index]);
                       },
                       child: Container(
                         height: height * 0.085,

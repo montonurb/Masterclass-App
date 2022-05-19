@@ -7,6 +7,7 @@ class CustomCard extends StatelessWidget {
   double height = 0.0;
   double width = 0.0;
   String imageIcon = "";
+  int indice = 0;
   String title = "";
   int exercise = 0;
   String text = "";
@@ -17,6 +18,7 @@ class CustomCard extends StatelessWidget {
     required this.height,
     required this.width,
     required this.imageIcon,
+    required this.indice,
     required this.title,
     required this.exercise,
     required this.text,
@@ -88,7 +90,7 @@ class CustomCard extends StatelessWidget {
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context).pushNamed('/activity-screen',
-                        arguments: [title, exercise]);
+                        arguments: [indice, title, exercise]);
                   },
                   child: Container(
                     height: 35,

@@ -1,7 +1,7 @@
 // ignore_for_file: must_be_immutable, avoid_print
 
 import 'package:flutter/material.dart';
-import 'package:masterclass_app/models/card.dart';
+import 'package:masterclass_app/models/exercise/card.dart';
 import 'package:masterclass_app/theme/app_theme.dart';
 import 'package:masterclass_app/widgets/custom_card.dart';
 import 'package:masterclass_app/widgets/custom_header.dart';
@@ -33,6 +33,7 @@ class HomeActivitiesScreen extends StatelessWidget {
                       height: height,
                       width: width,
                       imageIcon: card[index][0],
+                      indice: index,
                       title: card[index][1],
                       exercise: card[index][2],
                       text: card[index][3],
