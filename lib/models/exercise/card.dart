@@ -16,8 +16,10 @@ List<List<dynamic>> card = const [
     "Estudos sobre animações implícitas e controladas, contendo 4 exercícios e 2 estudos.",
     "",
     [
-      "/implied-animation-screen",
-      "/controlled-animation-screen",
+      "/first-implied-animation-screen",
+      "/second-implied-animation-screen",
+      "/first-controlled-animation-screen",
+      "/second-controlled-animation-screen",
     ],
   ],
   [
