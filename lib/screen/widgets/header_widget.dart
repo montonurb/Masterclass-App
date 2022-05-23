@@ -2,13 +2,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:masterclass_app/theme/app_theme.dart';
 
-import '../theme/app_theme.dart';
-
-class CustomHeader extends StatelessWidget {
+class HeaderWidget extends StatelessWidget {
   String title = "";
   bool logo = true;
-  CustomHeader({Key? key, required this.title, required this.logo})
+  HeaderWidget({Key? key, required this.title, required this.logo})
       : super(key: key);
 
   @override

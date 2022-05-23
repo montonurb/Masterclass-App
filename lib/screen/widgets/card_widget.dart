@@ -1,9 +1,9 @@
 // ignore_for_file: must_be_immutable
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import '../theme/app_theme.dart';
+import 'package:masterclass_app/theme/app_theme.dart';
 
-class CustomCard extends StatelessWidget {
+class CardWidget extends StatelessWidget {
   double height = 0.0;
   double width = 0.0;
   String imageIcon = "";
@@ -13,7 +13,7 @@ class CustomCard extends StatelessWidget {
   String text = "";
   String linkGitHub = "";
 
-  CustomCard({
+  CardWidget({
     Key? key,
     required this.height,
     required this.width,

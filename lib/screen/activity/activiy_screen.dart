@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:masterclass_app/models/exercise/card.dart';
+import 'package:masterclass_app/screen/widgets/header_widget.dart';
 import 'package:masterclass_app/theme/app_theme.dart';
-import 'package:masterclass_app/widgets/custom_header.dart';
 
 class AcitivityScreen extends StatelessWidget {
   AcitivityScreen({
@@ -28,7 +28,7 @@ class AcitivityScreen extends StatelessWidget {
               const EdgeInsets.only(top: 35, left: 15, right: 15, bottom: 10),
           child: Column(
             children: [
-              CustomHeader(title: title, logo: false),
+              HeaderWidget(title: title, logo: false),
               const SizedBox(height: 16),
               Expanded(
                 child: ListView.separated(

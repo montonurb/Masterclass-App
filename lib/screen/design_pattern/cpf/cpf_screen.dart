@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:masterclass_app/models/validation_cpf/cpf.dart';
+import 'package:masterclass_app/screen/widgets/header_widget.dart';
 import 'package:masterclass_app/theme/app_theme.dart';
-import 'package:masterclass_app/widgets/custom_header.dart';
 import 'package:mask_input_formatter/mask_input_formatter.dart';
 
 class CpfScreen extends StatefulWidget {
@@ -26,7 +26,7 @@ class _CpfScreenState extends State<CpfScreen> {
               const EdgeInsets.only(top: 35, left: 15, right: 15, bottom: 10),
           child: Column(
             children: [
-              CustomHeader(title: "Validador de CPF", logo: false),
+              HeaderWidget(title: "Validador de CPF", logo: false),
               const SizedBox(height: 16),
               TextField(
                 style: TextStyle(

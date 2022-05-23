@@ -3,12 +3,12 @@
 import 'package:flutter/material.dart';
 import 'package:masterclass_app/theme/app_theme.dart';
 
-class CustomSkill extends StatelessWidget {
+class SkillWidget extends StatelessWidget {
   String nameSkill = "";
   double levelSkill = 0.0;
   double height = 0.0;
   double width = 0.0;
-  CustomSkill({
+  SkillWidget({
     Key? key,
     required this.nameSkill,
     required this.levelSkill,
@@ -48,7 +48,6 @@ class CustomSkill extends StatelessWidget {
               ),
             ],
           ),
-          //CustomSkill(nameSkill: "Flutter", levelSkill: 0.5)
         ],
       ),
     );

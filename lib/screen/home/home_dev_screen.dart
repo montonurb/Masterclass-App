@@ -2,10 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:masterclass_app/screen/widgets/header_widget.dart';
+import 'package:masterclass_app/screen/widgets/skill_widget.dart';
+import 'package:masterclass_app/screen/widgets/tech_widget.dart';
 import 'package:masterclass_app/theme/app_theme.dart';
-import 'package:masterclass_app/widgets/custom_header.dart';
-import 'package:masterclass_app/widgets/custom_skill.dart';
-import 'package:masterclass_app/widgets/custom_tech.dart';
 
 class DevScreen extends StatelessWidget {
   double height = 0.0;
@@ -22,7 +22,7 @@ class DevScreen extends StatelessWidget {
         child: SizedBox(
           child: Column(
             children: [
-              CustomHeader(title: "Sobre o dev", logo: true),
+              HeaderWidget(title: "Sobre o dev", logo: true),
               const SizedBox(height: 16),
               Container(
                 height: height * 0.35,
@@ -87,35 +87,35 @@ class DevScreen extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
-                    CustomTech(
+                    TechWidget(
                       height: height,
                       width: width,
                       nameTech: "Flutter",
                       imageTech: "assets/img/about/simple-flutter-1.svg",
                     ),
                     const SizedBox(width: 16),
-                    CustomTech(
+                    TechWidget(
                       height: height,
                       width: width,
                       nameTech: "Flutter",
                       imageTech: "assets/img/about/simple-flutter-1.svg",
                     ),
                     const SizedBox(width: 16),
-                    CustomTech(
+                    TechWidget(
                       height: height,
                       width: width,
                       nameTech: "Flutter",
                       imageTech: "assets/img/about/simple-flutter-1.svg",
                     ),
                     const SizedBox(width: 16),
-                    CustomTech(
+                    TechWidget(
                       height: height,
                       width: width,
                       nameTech: "Flutter",
                       imageTech: "assets/img/about/simple-flutter-1.svg",
                     ),
                     const SizedBox(width: 16),
-                    CustomTech(
+                    TechWidget(
                       height: height,
                       width: width,
                       nameTech: "Flutter",
@@ -143,25 +143,25 @@ class DevScreen extends StatelessWidget {
                 ),
                 child: Column(
                   children: [
-                    CustomSkill(
+                    SkillWidget(
                       nameSkill: "Dart/Flutter",
                       levelSkill: 7,
                       height: height,
                       width: width,
                     ),
-                    CustomSkill(
+                    SkillWidget(
                       nameSkill: "Regex",
                       levelSkill: 6,
                       height: height,
                       width: width,
                     ),
-                    CustomSkill(
+                    SkillWidget(
                       nameSkill: "HTML/CSS",
                       levelSkill: 4,
                       height: height,
                       width: width,
                     ),
-                    CustomSkill(
+                    SkillWidget(
                       nameSkill: "Javascript",
                       levelSkill: 4,
                       height: height,

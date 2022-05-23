@@ -2,9 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:masterclass_app/models/exercise/card.dart';
+import 'package:masterclass_app/screen/widgets/card_widget.dart';
+import 'package:masterclass_app/screen/widgets/header_widget.dart';
 import 'package:masterclass_app/theme/app_theme.dart';
-import 'package:masterclass_app/widgets/custom_card.dart';
-import 'package:masterclass_app/widgets/custom_header.dart';
 
 class HomeActivitiesScreen extends StatelessWidget {
   double height = 0.0;
@@ -23,13 +23,13 @@ class HomeActivitiesScreen extends StatelessWidget {
           width: width,
           child: Column(
             children: [
-              CustomHeader(title: "Atividades", logo: true),
+              HeaderWidget(title: "Atividades", logo: true),
               const SizedBox(height: 16),
               Expanded(
                 child: ListView.separated(
                   itemCount: card.length,
                   itemBuilder: (BuildContext context, int index) {
-                    return CustomCard(
+                    return CardWidget(
                       height: height,
                       width: width,
                       imageIcon: card[index][0],

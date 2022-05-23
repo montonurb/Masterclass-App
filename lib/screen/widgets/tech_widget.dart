@@ -2,14 +2,14 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import '../theme/app_theme.dart';
+import 'package:masterclass_app/theme/app_theme.dart';
 
-class CustomTech extends StatelessWidget {
+class TechWidget extends StatelessWidget {
   double height = 0.0;
   double width = 0.0;
   String nameTech = "";
   String imageTech = "";
-  CustomTech({
+  TechWidget({
     Key? key,
     required this.height,
     required this.width,
