@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:masterclass_app/models/implied_animation/text_model.dart';
+import 'package:masterclass_app/models/animation/text_model.dart';
 import 'package:masterclass_app/screen/animation/implied_animation/screen/custom_expansion.dart';
 
 class SecondImpliedAnimationScreen extends StatefulWidget {

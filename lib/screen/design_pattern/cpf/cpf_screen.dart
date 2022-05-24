@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:masterclass_app/models/validation_cpf/cpf.dart';
+import 'package:masterclass_app/models/cpf/cpf_store.dart';
 import 'package:masterclass_app/screen/widgets/header_widget.dart';
 import 'package:masterclass_app/theme/app_theme.dart';
 import 'package:mask_input_formatter/mask_input_formatter.dart';
@@ -12,10 +12,7 @@ class CpfScreen extends StatefulWidget {
 }
 
 class _CpfScreenState extends State<CpfScreen> {
-  late Cpf cpf = Cpf(cpf: '');
-  bool validation = false;
-  String mensagem = '';
-  TextEditingController controller = TextEditingController();
+  final store = CpfStore();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -35,6 +32,7 @@ class _CpfScreenState extends State<CpfScreen> {
                 ),
                 keyboardType: TextInputType.number,
                 inputFormatters: [MaskInputFormatter(mask: '###.###.###-##')],
+                onChanged: store.setCpf,
                 decoration: InputDecoration(
                   enabledBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
@@ -48,7 +46,7 @@ class _CpfScreenState extends State<CpfScreen> {
                   ),
                   labelText: 'CPF:',
                   labelStyle: TextStyle(color: AppTheme.colors.textHighlight),
-                  prefixIcon: validation == true
+                  prefixIcon: store.validation == true
                       ? Icon(
                           Icons.check,
                           color: AppTheme.colors.check,
@@ -58,26 +56,13 @@ class _CpfScreenState extends State<CpfScreen> {
                           color: AppTheme.colors.primary,
                         ),
                 ),
-                controller: controller,
               ),
               const SizedBox(height: 10),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   primary: AppTheme.colors.primary,
                 ),
-                onPressed: () {
-                  if (controller.text != '') {
-                    setState(() {
-                      validation = cpf.validationCpf(controller.text);
-                      mensagem =
-                          validation == true ? "CPF válido!" : "CPF inválido!";
-                    });
-                  } else {
-                    setState(() {
-                      mensagem = "Informe o CPF!";
-                    });
-                  }
-                },
+                onPressed: store.validationCpf,
                 child: Text(
                   "Validar CPF!",
                   style: TextStyle(
@@ -87,14 +72,19 @@ class _CpfScreenState extends State<CpfScreen> {
                 ),
               ),
               const SizedBox(height: 50),
-              Text(
-                mensagem,
-                style: TextStyle(
-                  fontSize: 24,
-                  color: mensagem == "CPF válido!"
-                      ? AppTheme.colors.check
-                      : AppTheme.colors.textHighlight,
-                ),
+              AnimatedBuilder(
+                animation: store,
+                builder: (context, child) {
+                  return Text(
+                    store.message,
+                    style: TextStyle(
+                      fontSize: 24,
+                      color: store.message == "CPF válido!"
+                          ? AppTheme.colors.check
+                          : AppTheme.colors.textHighlight,
+                    ),
+                  );
+                },
               ),
             ],
           ),
