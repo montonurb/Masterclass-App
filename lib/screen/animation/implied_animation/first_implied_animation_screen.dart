@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:masterclass_app/screen/widgets/header_widget.dart';
+import 'package:masterclass_app/theme/app_theme.dart';
 
 class FirstImpliedAnimationScreen extends StatefulWidget {
   const FirstImpliedAnimationScreen({Key? key}) : super(key: key);
@@ -14,35 +16,44 @@ class _FirstImpliedAnimationScreenState
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("First Screen"),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: GestureDetector(
-          onTap: () {
-            setState(() {
-              if (button.width == 80.0) {
-                button = ButtonFloating.square();
-              } else {
-                button = ButtonFloating.circle();
-              }
-            });
-          },
-          child: AnimatedAlign(
-            duration: const Duration(seconds: 1),
-            alignment: button.alignment,
-            child: AnimatedContainer(
-              curve: Curves.slowMiddle,
-              duration: const Duration(seconds: 1),
-              height: button.height,
-              width: button.width,
-              decoration: BoxDecoration(
-                color: button.color,
-                borderRadius: BorderRadius.circular(button.border),
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: AppTheme.colors.scaffoldBackground,
+        body: Padding(
+          padding:
+              const EdgeInsets.only(top: 35, left: 15, right: 15, bottom: 10),
+          child: Column(
+            children: [
+              HeaderWidget(title: "Animação Implícita", logo: false),
+              const SizedBox(height: 16),
+              Expanded(
+                child: GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      if (button.width == 80.0) {
+                        button = ButtonFloating.square();
+                      } else {
+                        button = ButtonFloating.circle();
+                      }
+                    });
+                  },
+                  child: AnimatedAlign(
+                    duration: const Duration(seconds: 1),
+                    alignment: button.alignment,
+                    child: AnimatedContainer(
+                      curve: Curves.slowMiddle,
+                      duration: const Duration(seconds: 1),
+                      height: button.height,
+                      width: button.width,
+                      decoration: BoxDecoration(
+                        color: button.color,
+                        borderRadius: BorderRadius.circular(button.border),
+                      ),
+                    ),
+                  ),
+                ),
               ),
-            ),
+            ],
           ),
         ),
       ),
@@ -71,7 +82,7 @@ class ButtonFloating {
       width: 80.0,
       border: 40.0,
       alignment: Alignment.bottomRight,
-      color: Colors.blue,
+      color: AppTheme.colors.primary,
     );
   }
 
@@ -81,7 +92,7 @@ class ButtonFloating {
       width: 160.0,
       border: 0.0,
       alignment: Alignment.topCenter,
-      color: Colors.purple,
+      color: AppTheme.colors.textHighlight,
     );
   }
 }
