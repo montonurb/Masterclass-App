@@ -1,6 +1,7 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:masterclass_app/theme/app_theme.dart';
 
 class CustomExpansion extends StatefulWidget {
   Map texts;
@@ -80,6 +81,7 @@ class _CustomExpansionState extends State<CustomExpansion> {
                     const FlutterLogo(size: 75),
                     Text(
                       "${widget.texts["textBody"]}",
+                      style: AppTheme.textStyle.bodyText,
                       textAlign: TextAlign.justify,
                     ),
                   ],

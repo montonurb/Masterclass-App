@@ -12,14 +12,13 @@ List<List<dynamic>> card = const [
   [
     "assets/img/home/awesome-running.svg",
     "Animações",
-    4,
+    3,
     "Estudos sobre animações implícitas e controladas, contendo 4 exercícios e 2 estudos.",
     "",
     [
       "/first-implied-animation-screen",
       "/second-implied-animation-screen",
       "/first-controlled-animation-screen",
-      "/second-controlled-animation-screen",
     ],
   ],
   [

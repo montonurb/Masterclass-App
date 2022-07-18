@@ -38,7 +38,6 @@ class _MasterClassAppState extends State<MasterClassApp> {
             const SecondImpliedAnimationScreen(),
         "/first-controlled-animation-screen": (context) =>
             const FirstExplicitAnimationScreenMyWidget(),
-        //"/second-controlled-animation-screen": (context) => const Second(),
         "/bank-mockup-screen": (context) => const BankScreen(),
         "/tinder-mockup-screen": (context) => const TinderScreen(),
       },
