@@ -11,18 +11,21 @@ class CpfStore extends ChangeNotifier {
   void setCpf(String value) {
     //COM O \W (W MAIUSCULO) ELE REMOVE OS CARACTERES ESPECIAIS
     _cpf = value.replaceAll(RegExp(r'[\W]'), '');
+    notifyListeners();
   }
 
   void setMensage(String value) {
     _message = value;
+    notifyListeners();
   }
 
   void setValidation(bool value) {
     _validation = value;
+    notifyListeners();
   }
 
   validationCpf() {
-    if (_message != '') {
+    if (_cpf != '') {
       int total = 0;
       if (_cpf.length != 11) {
         return false;
