@@ -12,7 +12,7 @@ List<List<dynamic>> card = const [
   [
     "assets/img/home/awesome-running.svg",
     "Animações",
-    2,
+    4,
     "Estudos sobre animações implícitas e controladas, contendo 4 exercícios e 2 estudos.",
     "",
     [

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:masterclass_app/screen/activity/activiy_screen.dart';
+import 'package:masterclass_app/screen/animation/explicit_animation/first_explicit_animation_screen.dart';
 import 'package:masterclass_app/screen/animation/implied_animation/first_implied_animation_screen.dart';
 import 'package:masterclass_app/screen/animation/implied_animation/second_implied_animation_screen.dart';
 import 'package:masterclass_app/screen/design_pattern/cpf/cpf_screen.dart';
@@ -35,8 +36,9 @@ class _MasterClassAppState extends State<MasterClassApp> {
             const FirstImpliedAnimationScreen(),
         "/second-implied-animation-screen": (context) =>
             const SecondImpliedAnimationScreen(),
-        //"/controlled-animation-screen": (context) => const FirstImpliedAnimationScreen(),
-        //"/controlled-animation-screen": (context) => const FirstImpliedAnimationScreen(),
+        "/first-controlled-animation-screen": (context) =>
+            const FirstExplicitAnimationScreenMyWidget(),
+        //"/second-controlled-animation-screen": (context) => const Second(),
         "/bank-mockup-screen": (context) => const BankScreen(),
         "/tinder-mockup-screen": (context) => const TinderScreen(),
       },
