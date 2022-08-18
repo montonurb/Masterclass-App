@@ -4,6 +4,7 @@ import 'package:masterclass_app/screen/animation/explicit_animation/first_explic
 import 'package:masterclass_app/screen/animation/implied_animation/first_implied_animation_screen.dart';
 import 'package:masterclass_app/screen/animation/implied_animation/second_implied_animation_screen.dart';
 import 'package:masterclass_app/screen/design_pattern/cpf/cpf_screen.dart';
+import 'package:masterclass_app/screen/design_pattern/service/service_screen.dart';
 import 'package:masterclass_app/screen/home/home_screen.dart';
 import 'package:masterclass_app/screen/mockup/bank/bank_screen.dart';
 import 'package:masterclass_app/screen/mockup/tinder/tinder_screen.dart';
@@ -32,6 +33,7 @@ class _MasterClassAppState extends State<MasterClassApp> {
         "/home-screen": (context) => const HomeScreen(),
         "/activity-screen": (context) => AcitivityScreen(),
         "/cpf-design-pattern-screen": (context) => const CpfScreen(),
+        "/services-design-pattern-screen": (context) => const UsersScreen(),
         "/first-implied-animation-screen": (context) =>
             const FirstImpliedAnimationScreen(),
         "/second-implied-animation-screen": (context) =>
