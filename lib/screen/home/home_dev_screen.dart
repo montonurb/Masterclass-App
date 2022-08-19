@@ -1,4 +1,4 @@
-// ignore_for_file: must_be_immutable
+// ignore_for_file: must_be_immutable, avoid_print
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -6,12 +6,20 @@ import 'package:masterclass_app/screen/widgets/header_widget.dart';
 import 'package:masterclass_app/screen/widgets/skill_widget.dart';
 import 'package:masterclass_app/screen/widgets/tech_widget.dart';
 import 'package:masterclass_app/theme/app_theme.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class DevScreen extends StatelessWidget {
   double height = 0.0;
   double width = 0.0;
   DevScreen({Key? key, required this.height, required this.width})
       : super(key: key);
+
+  Future<void> linkUrl(String url) async {
+    await launchUrl(
+      Uri.parse(url),
+      mode: LaunchMode.externalApplication,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -54,17 +62,31 @@ class DevScreen extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          SvgPicture.asset(
-                            "assets/img/about/ionic-logo-whatsapp.svg",
+                          GestureDetector(
+                            onTap: () => linkUrl('https://wa.me/5586999116978'),
+                            child: SvgPicture.asset(
+                              "assets/img/about/ionic-logo-whatsapp.svg",
+                            ),
                           ),
-                          SvgPicture.asset(
-                            "assets/img/about/awesome-github-alt.svg",
+                          GestureDetector(
+                            onTap: () =>
+                                linkUrl('https://github.com/montonurb'),
+                            child: SvgPicture.asset(
+                              "assets/img/about/awesome-github-alt.svg",
+                            ),
                           ),
-                          SvgPicture.asset(
-                            "assets/img/about/awesome-instagram.svg",
+                          GestureDetector(
+                            onTap: () =>
+                                linkUrl('https://www.instagram.com/montonurb/'),
+                            child: SvgPicture.asset(
+                              "assets/img/about/awesome-instagram.svg",
+                            ),
                           ),
-                          SvgPicture.asset(
-                            "assets/img/about/awesome-facebook-f.svg",
+                          GestureDetector(
+                            onTap: () => linkUrl('https://facebook.com'),
+                            child: SvgPicture.asset(
+                              "assets/img/about/awesome-facebook-f.svg",
+                            ),
                           ),
                         ],
                       ),
@@ -145,7 +167,7 @@ class DevScreen extends StatelessWidget {
                   children: [
                     SkillWidget(
                       nameSkill: "Dart/Flutter",
-                      levelSkill: 7,
+                      levelSkill: 8,
                       height: height,
                       width: width,
                     ),

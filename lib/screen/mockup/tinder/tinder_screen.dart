@@ -47,7 +47,7 @@ class TinderScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const Spacer(),
+                  SizedBox(height: MediaQuery.of(context).size.height * 0.30),
                   ConstrainedBox(
                     constraints: BoxConstraints(
                         minHeight: heigthMediaquery * 0.25,

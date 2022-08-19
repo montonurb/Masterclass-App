@@ -1,6 +1,16 @@
 List<List<dynamic>> card = const [
   [
     "assets/img/home/awesome-running.svg",
+    "Design Patterns II",
+    1,
+    "Estudo sobre CopyWith, Service e Repository",
+    "",
+    [
+      "/services-design-pattern-screen",
+    ],
+  ],
+  [
+    "assets/img/home/awesome-running.svg",
     "Design Patterns I",
     1,
     "Introdução aos estudos de Design Pattern. MVC, MVP e MVW",
@@ -12,14 +22,13 @@ List<List<dynamic>> card = const [
   [
     "assets/img/home/awesome-running.svg",
     "Animações",
-    2,
+    3,
     "Estudos sobre animações implícitas e controladas, contendo 4 exercícios e 2 estudos.",
     "",
     [
       "/first-implied-animation-screen",
       "/second-implied-animation-screen",
       "/first-controlled-animation-screen",
-      "/second-controlled-animation-screen",
     ],
   ],
   [

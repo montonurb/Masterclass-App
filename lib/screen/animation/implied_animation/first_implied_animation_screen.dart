@@ -24,7 +24,7 @@ class _FirstImpliedAnimationScreenState
               const EdgeInsets.only(top: 35, left: 15, right: 15, bottom: 10),
           child: Column(
             children: [
-              HeaderWidget(title: "Animação Implícita", logo: false),
+              HeaderWidget(title: "Buttom Animation Implícita", logo: false),
               const SizedBox(height: 16),
               Expanded(
                 child: GestureDetector(

@@ -21,22 +21,22 @@ class _SecondImpliedAnimationScreenState
     return SafeArea(
       child: Scaffold(
         backgroundColor: AppTheme.colors.scaffoldBackground,
-        body: Column(
-          children: [
-            HeaderWidget(title: "Animação Implícita - Lista", logo: false),
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: ListView.separated(
-                    separatorBuilder: (BuildContext context, int index) =>
-                        const Divider(),
+        body: Padding(
+          padding:
+              const EdgeInsets.only(top: 60, left: 15, right: 15, bottom: 10),
+          child: Column(
+            children: [
+              HeaderWidget(title: "Animação Implícita", logo: false),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.85,
+                child: ListView.builder(
                     itemCount: texts.length,
                     itemBuilder: (BuildContext context, int index) {
                       return CustomExpansion(texts: texts[index], index: index);
                     }),
-              ),
-            ),
-          ],
+              )
+            ],
+          ),
         ),
       ),
     );

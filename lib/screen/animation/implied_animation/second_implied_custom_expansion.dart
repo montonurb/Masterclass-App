@@ -87,7 +87,7 @@ class _CustomExpansionState extends State<CustomExpansion> {
                     const FlutterLogo(size: 75),
                     Text(
                       "${widget.texts["textBody"]}",
-                      style: AppTheme.textStyle.healine2,
+                      style: AppTheme.textStyle.bodyText,
                       textAlign: TextAlign.justify,
                     ),
                   ],
