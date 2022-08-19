@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:masterclass_app/Repositories/posts_repository.dart';
+import 'package:masterclass_app/controllers/posts_controller.dart';
+import 'package:masterclass_app/main.dart';
 import 'package:masterclass_app/models/post/post_model.dart';
 import 'package:masterclass_app/screen/widgets/header_widget.dart';
 import 'package:masterclass_app/theme/app_theme.dart';
@@ -12,11 +13,11 @@ class PostsScreen extends StatefulWidget {
 }
 
 class PostsScreenState extends State<PostsScreen> {
-  final service = PostsRepository();
+  final service = injection.get<PostsController>();
 
   @override
   void initState() {
-    service.getAllPosts();
+    service.getPosts();
     super.initState();
   }
 
@@ -39,9 +40,9 @@ class PostsScreenState extends State<PostsScreen> {
                       return SizedBox(
                         height: MediaQuery.of(context).size.height * 0.8,
                         child: ListView.separated(
-                          itemCount: service.listPost.length,
+                          itemCount: service.posts.length,
                           itemBuilder: (context, index) {
-                            PostModel post = service.listPost[index];
+                            PostModel post = service.posts[index];
                             return ListTile(
                               leading: Text(
                                 post.id.toString(),

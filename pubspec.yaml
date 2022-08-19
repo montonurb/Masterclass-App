@@ -16,6 +16,7 @@ dependencies:
   mask_input_formatter: ^0.0.3
   url_launcher: ^6.1.5
   dio: ^4.0.6
+  get_it: ^7.2.0
 
 dev_dependencies:
   flutter_test:

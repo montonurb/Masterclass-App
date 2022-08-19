@@ -1,10 +1,12 @@
-import 'package:flutter/cupertino.dart';
-import 'package:masterclass_app/datasources/posts_datasource.dart';
+import 'package:masterclass_app/controllers/posts_controller.dart';
 import 'package:masterclass_app/models/post/post_model.dart';
 
-class PostsRepository extends ChangeNotifier {
-  final _datasource = PostDatasource();
+class PostsRepository implements IPostsRepository {
+  final PostsRepository _datasource;
 
+  PostsRepository(this._datasource);
+
+  @override
   Future<List<PostModel>> getAllPosts() async {
     try {
       List list = await _datasource.getAllPosts();
@@ -15,7 +17,6 @@ class PostsRepository extends ChangeNotifier {
               title: e["title"],
               body: e["body"]))
           .toList();
-      notifyListeners();
       return posts;
     } catch (e) {
       List<PostModel> posts = [];

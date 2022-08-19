@@ -1,8 +1,9 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:dio/dio.dart';
-import 'package:masterclass_app/models/post/post_model.dart';
 
 class PostDatasource {
-  final dio = Dio();
+  final Dio dio;
+  PostDatasource(this.dio);
 
   Future<dynamic> getAllPosts() async {
     final response =
