@@ -21,7 +21,8 @@ final injection = GetIt.instance;
 void main(List<String> args) {
   injection.registerFactory(() => Dio());
   injection.registerFactory(() => PostDatasource(injection.get()));
-  injection.registerFactory(() => PostsRepository(injection.get()));
+  injection.registerFactory<IPostsRepository>(
+      () => PostsRepository(injection.get()));
   injection.registerLazySingleton(() => PostsController(injection.get()));
 
   runApp(const MasterClassApp());
