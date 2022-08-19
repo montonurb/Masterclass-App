@@ -2,11 +2,12 @@ List<List<dynamic>> card = const [
   [
     "assets/img/home/awesome-running.svg",
     "Design Patterns II",
-    1,
+    2,
     "Estudo sobre CopyWith, Service e Repository",
     "",
     [
       "/services-design-pattern-screen",
+      "/repository-design-pattern-screen",
     ],
   ],
   [
