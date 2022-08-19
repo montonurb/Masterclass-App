@@ -1,6 +1,7 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:masterclass_app/theme/app_theme.dart';
 
 class CustomExpansion extends StatefulWidget {
   Map texts;
@@ -15,7 +16,7 @@ class CustomExpansion extends StatefulWidget {
 
 class _CustomExpansionState extends State<CustomExpansion> {
   double turns = 0.0;
-  Color colorButton = Colors.black;
+  Color colorButton = AppTheme.colors.textHighlight;
   double heightFactor = 0.0;
   bool onPressed = false;
 
@@ -32,7 +33,7 @@ class _CustomExpansionState extends State<CustomExpansion> {
           } else {
             heightFactor = 0.0;
             turns = 0.0;
-            colorButton = Colors.black;
+            colorButton = AppTheme.colors.textHighlight;
             onPressed = false;
           }
         });
@@ -42,25 +43,31 @@ class _CustomExpansionState extends State<CustomExpansion> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 2.0),
             child: Container(
-              height: 50,
-              color: Colors.white,
+              height: 60,
+              decoration: BoxDecoration(
+                color: AppTheme.colors.cardBackground,
+                borderRadius: BorderRadius.circular(32),
+              ),
               child: Row(
                 children: [
-                  Text(
-                    "${widget.texts["title"]} ${widget.index}",
-                    style: TextStyle(
-                      color: colorButton,
-                      fontSize: 18,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                    child: Text(
+                      "${widget.texts["title"]} ${widget.index}",
+                      style: AppTheme.textStyle.healine1,
                     ),
                   ),
                   const Spacer(),
-                  AnimatedRotation(
-                    turns: turns,
-                    duration: const Duration(seconds: 1),
-                    child: Icon(
-                      Icons.keyboard_arrow_down,
-                      color: colorButton,
-                      size: 30,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: AnimatedRotation(
+                      turns: turns,
+                      duration: const Duration(seconds: 1),
+                      child: Icon(
+                        Icons.keyboard_arrow_down,
+                        color: colorButton,
+                        size: 30,
+                      ),
                     ),
                   ),
                 ],
@@ -80,6 +87,7 @@ class _CustomExpansionState extends State<CustomExpansion> {
                     const FlutterLogo(size: 75),
                     Text(
                       "${widget.texts["textBody"]}",
+                      style: AppTheme.textStyle.healine2,
                       textAlign: TextAlign.justify,
                     ),
                   ],
