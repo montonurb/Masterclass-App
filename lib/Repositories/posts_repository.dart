@@ -4,12 +4,11 @@ import 'package:masterclass_app/models/post/post_model.dart';
 
 class PostsRepository extends ChangeNotifier {
   final _datasource = PostDatasource();
-  List<PostModel> listPost = [];
 
   Future<List<PostModel>> getAllPosts() async {
     try {
       List list = await _datasource.getAllPosts();
-      listPost = list
+      final posts = list
           .map((e) => PostModel(
               userId: e["userId"],
               id: e['id'],
@@ -17,10 +16,10 @@ class PostsRepository extends ChangeNotifier {
               body: e["body"]))
           .toList();
       notifyListeners();
+      return posts;
     } catch (e) {
-      listPost = [];
+      List<PostModel> posts = [];
+      return posts;
     }
-
-    return listPost;
   }
 }
